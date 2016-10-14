@@ -1,4 +1,4 @@
-# combines allele frequencies from two samples (counts.csv)
+# combines allele frequencies from two samples (3.cleanCounts.R)
 # and calculates relative frequencies along chromosomes
 
 library(zoo)
@@ -62,8 +62,8 @@ vplayout <- function (x, y) {
 # import allele counts
 ##########################################
 
-setA <- read.csv("counts.csv")
-setB <- read.csv("counts.csv")
+setA <- read.csv("setA_counts.csv")
+setB <- read.csv("setB_counts.csv")
 
 # merge datasets
 ds1 <- merge(setA[,c(1, 2, 7, 8)], setB[,c(1, 2, 7, 8)],
