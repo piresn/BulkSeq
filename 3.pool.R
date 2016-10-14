@@ -1,5 +1,5 @@
-# combines allele frequencies from two samples (3.cleanCounts.R)
-# and calculates relative frequencies along chromosomes
+# Combine allele frequencies from two samples (3.cleanCounts.R)
+# and calculate relative frequencies along chromosomes
 
 library(zoo)
 library(ggplot2)
