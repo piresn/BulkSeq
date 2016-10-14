@@ -6,5 +6,7 @@
 
 <b>3.pool.R:</b> combine allele frequencies from two samples (obtained with <i>cleanCounts.R</i>) and calculate relative frequencies along chromosomes
 
-#Requires:
+
+<b>GenomeSNPmask.py: </b> Removes or replaces known SNP positions from a fasta file
+
 R version 3.3.1, scales_0.4.0, ggplot2 2.1.0, zoo 1.7-13
