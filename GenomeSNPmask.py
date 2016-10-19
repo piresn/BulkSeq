@@ -13,9 +13,11 @@ SNP_file should be csv with: chromosome, position, ref_base, new_base
 
 """)
 
-
 import sys
 import csv
+from Bio import SeqIO
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
 
 ################################################
 ######## import snp data
@@ -86,10 +88,6 @@ def main(record, info):
 ################################################
 # run
 ################################################
-
-from Bio import SeqIO
-from Bio.Seq import Seq
-from Bio.SeqRecord import SeqRecord
 
 f = open(sys.argv[2])
 
