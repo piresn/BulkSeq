@@ -10,6 +10,8 @@
 
 <b>mapping.py: </b> minimal set of commands to filter and map reads, call SNPs and output a vcf files with allele frequencies
 
+<i>Requires:</i>
+
 FastQC 0.11.3;
 cutadapt 1.8.3;
 Samtools 1.2 (using htslib 1.2.1);
