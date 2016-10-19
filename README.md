@@ -6,7 +6,17 @@
 
 <b>3.pool.R:</b> combine allele frequencies from two samples (obtained with <i>cleanCounts.R</i>) and calculate relative frequencies along chromosomes
 
-
 <b>GenomeSNPmask.py: </b> Removes or replaces known SNP positions from a fasta file
 
-R version 3.3.1, scales_0.4.0, ggplot2 2.1.0, zoo 1.7-13
+<b>mapping.py: </b> minimal set of commands to filter and map reads, call SNPs and output a vcf files with allele frequencies
+
+FastQC 0.11.3;
+cutadapt 1.8.3;
+Samtools 1.2 (using htslib 1.2.1);
+Bowtie 2 2.2.9;
+R 3.3.1;
+scales_0.4.0;
+ggplot2 2.1.0;
+zoo 1.7-13;
+Python 3.4.0;
+Bio 1.65;
