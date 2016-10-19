@@ -1,14 +1,14 @@
 # BulkSeq
 
-<b>1.snpFile.R:</b> retrieve publicly available snp data for the Cvi-0 and Ler-1 accessions of <i>Arabidopsis thaliana</i>, merge and output a reformatted <i>snpm.csv</i> file
+<b>GenomeSNPmask.py: </b> Remove or replace known SNP positions from a genome sequence file (fasta)
 
-<b>2.cleanCounts.R:</b> merge information from <i>snpm.csv</i> file with an <i>out.vcf</i> file, filters and outputs a <i>counts.csv</i> file with allele counts
+<b>mapping.sh: </b> minimal set of commands to filter and map reads from a fastq file, call SNPs and output a <i>out.vcf</i> file with allele frequencies
+
+<b>1.snpFile.R:</b> retrieve publicly available snp data for the Cvi-0 and Ler-1 accessions of <i>Arabidopsis thaliana</i>, merge and output a reformatted snp matrix (<i>snpm.csv</i>)
+
+<b>2.cleanCounts.R:</b> merge information from the snp matrix (<i>snpm.csv</i>) with the allele frequencies (<i>out.vcf</i>), filters and outputs a <i>counts.csv</i> file with allele counts
 
 <b>3.pool.R:</b> combine allele frequencies from two samples (obtained with <i>cleanCounts.R</i>) and calculate relative frequencies along chromosomes
-
-<b>GenomeSNPmask.py: </b> Removes or replaces known SNP positions from a fasta file
-
-<b>mapping.py: </b> minimal set of commands to filter and map reads, call SNPs and output a vcf files with allele frequencies
 
 <i>Requires:</i>
 
