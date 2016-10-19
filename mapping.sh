@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Check read quality with FastQC
+# Check read quality with FastQC
 fastqc input.fastq
 
 # Remove residual adaptors, trim and/or discard low quality reads using cutadapt (Martin 2011).
@@ -11,7 +11,7 @@ cutadapt --minimum-length 20 -q 10 -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -o trim
 # Recheck read quality using FastQC and modify previous step if required
 
 
-#	Retrieve a reference genome sequence (e.g. the TAIR10 genome release from www.arabidopsis.org) and index using Bowtie2
+# Retrieve a reference genome sequence (e.g. the TAIR10 genome release from www.arabidopsis.org) and index using Bowtie2
 bowtie2-build -f TAIR10.fa index
 
 # Align reads to the indexed genome using Bowtie2 and the SAMtools package
