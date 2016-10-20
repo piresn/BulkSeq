@@ -22,7 +22,9 @@ snp <- rbind(cbind(pos = Ler_pos,
                    Ler[, c(1, 4, 5)]),
              cbind(pos = Cvi_pos,
                    Cvi[, c(1, 4, 5)]))
+
 snp$pos <- as.character(snp$pos)
+names(snp) <- c('pos', 'genot', 'ref', 'alt')
 
 #remove common snps
 snp.m <- snp[!snp$pos %in% snp$pos[duplicated(snp$pos)],]
@@ -31,4 +33,5 @@ snp.m <- snp[!snp$pos %in% snp$pos[duplicated(snp$pos)],]
 # export to file
 ################################
 
-write.csv(snp.m, file = "snpm.csv")
+write.table(snp.m, file = "snpm.txt",
+          row.names = FALSE, quote = FALSE)
