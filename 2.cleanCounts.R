@@ -60,8 +60,8 @@ filter <- function(x, cut){
   filt3 <- filt2[p.adjust(ppois(cov, lambda = median(cov), lower.tail = F),
                           method = "bonferroni") > cut,]
   temp <- dim(filt2)[1] - dim(filt3)[1]
-  cat(temp, 'snps (', round(temp*100/dim(filt2)[1], 2), '%) were above the expected',
-      cut*100, '% percentil of a theoretical Poisson distribution\n\n')
+  cat(temp, 'snps (', round(temp*100 / dim(filt2)[1], 2), '%) were above the expected',
+      cut*100, '% percentile of a theoretical Poisson distribution\n\n')
   
   cat('Returned number of SNPs:', dim(filt3)[1])
   return(filt3)
@@ -72,7 +72,7 @@ format <- function(x){
   count <- with(x,
                 data.frame(CHR = chrom,
                            POS = coord,
-                           COV = ref+alt,
+                           COV = ref + alt,
                            TAIR10_BASE = ref.seq,
                            LER_BASE = factor('N', levels = c('A', 'T', 'G', 'C')),
                            CVI_BASE = factor('N', levels = c('A', 'T', 'G', 'C'))
@@ -86,9 +86,9 @@ format <- function(x){
   
   cat("Median coverage:", median(count$COV))
   cat("\n")
-  cat("Median Cvi read frequency:", with(count, median(CVI_COUNT/COV)))
+  cat("Median Cvi read frequency:", with(count, median(CVI_COUNT / COV)))
   cat("\n")
-  cat("Median Ler read frequency:", with(count, median(LER_COUNT/COV)))
+  cat("Median Ler read frequency:", with(count, median(LER_COUNT / COV)))
   cat("\n")
   cat("Total snps:", dim(count)[1])
   return(count)
