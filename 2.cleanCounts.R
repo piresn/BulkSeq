@@ -11,7 +11,8 @@ import <- function(x){
   imp$chrom <- tolower(imp$chrom)
   imp$info <- as.character(imp$info)
   
-  # get DP4 info
+  # get DP4 info where counts for different alleles are stored
+  # See http://samtools.sourceforge.net/mpileup.shtml
   a <- sapply(strsplit(as.character(imp$info), split="DP4="), "[", 2)
   b <- sapply(strsplit(a, split=";"), "[", 1)
   c1 <- as.numeric(sapply(strsplit(b, split=","), "[",1))
