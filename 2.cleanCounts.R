@@ -29,10 +29,11 @@ import <- function(x){
   return(out)
 }
 
+
 snp.info <- function(x, snp.m = snp.m){
-  origin <- snp.m$V1[match(x$pos, snp.m$pos, nomatch=NA)]
-  ref.origin <- snp.m$V4[match(x$pos, snp.m$pos, nomatch=NA)]
-  alt.origin <- snp.m$V5[match(x$pos, snp.m$pos, nomatch=NA)]
+  origin <- snp.m$genot[match(x$pos, snp.m$pos, nomatch=NA)]
+  ref.origin <- snp.m$ref[match(x$pos, snp.m$pos, nomatch=NA)]
+  alt.origin <- snp.m$alt[match(x$pos, snp.m$pos, nomatch=NA)]
   bind <- cbind(x,
                 origin=origin,
                 ref.origin=ref.origin,
@@ -40,6 +41,7 @@ snp.info <- function(x, snp.m = snp.m){
   out <- bind[complete.cases(bind),]
   return(out)
 }
+
 
 filter <- function(x, cut){
   cat('Initial number of SNPs:', dim(x)[1], '\n\n')
@@ -57,8 +59,8 @@ filter <- function(x, cut){
   filt3 <- filt2[p.adjust(ppois(cov, lambda = median(cov), lower.tail = F),
                           method = "bonferroni") > cut,]
   temp <- dim(filt2)[1] - dim(filt3)[1]
-  cat(temp, 'snps (', round(temp*100/dim(filt2)[1], 2), '%), were above the expected',
-      cut*100, '% value of theoretical poisson distribution\n\n')
+  cat(temp, 'snps (', round(temp*100/dim(filt2)[1], 2), '%) were above the expected',
+      cut*100, '% percentil of a theoretical Poisson distribution\n\n')
   
   cat('Returned number of SNPs:', dim(filt3)[1])
   return(filt3)
@@ -96,7 +98,7 @@ format <- function(x){
 ################################
 
 # import snps
-snp.m <- read.csv("snpm.csv")
+snp.m <- read.table('snpm.txt', header = TRUE)
 
 # import allele frequencies from vcf file
 vcf <- import("out.vcf")
