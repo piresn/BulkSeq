@@ -1,5 +1,5 @@
-# Merge info from file snpm.csv with allele frequencies from an out.vcf file,
-# and outputs a csv file with allele counts
+# Merge info from the file snpm.txt (known SNPs matrix) with the determined allele frequencies (from an out.vcf file)
+# and outputs a .csv file with allele counts
 
 ################################
 #functions
