@@ -1,5 +1,5 @@
 # Retrieve publicly available snp data for the Cvi-0 and Ler-1 accessions of Arabidopsis thaliana,
-# merge and outputs a reformated .csv file
+# merge and outputs a reformated snp matrix file
 
 ################################
 #import snp files
