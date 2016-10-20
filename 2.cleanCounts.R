@@ -118,4 +118,4 @@ counts <- format(vcf.filter)
 # export
 ################################
 
-write.csv(counts, 'counts.csv', row.names = FALSE)
+write.csv(counts, 'counts.csv', row.names = FALSE, quote = FALSE)
