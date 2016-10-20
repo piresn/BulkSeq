@@ -1,30 +1,30 @@
 # Merge info from the file snpm.txt (known SNPs matrix) with the determined allele frequencies (from an out.vcf file)
-# and outputs a .csv file with allele counts
+# and outputs a csv file with allele counts
 
 ################################
 #functions
 ################################
 
 import <- function(x){
-  imp <- read.table(x)[, c(1,2,4,5,6,8)]
+  imp <- read.table(x)[, c(1, 2, 4, 5, 6, 8)]
   names(imp) <- c("chrom", "coord", "ref.seq", "alt.seq", "qual", "info")
   imp$chrom <- tolower(imp$chrom)
   imp$info <- as.character(imp$info)
   
   # get DP4 info where counts for different alleles are stored
   # See http://samtools.sourceforge.net/mpileup.shtml
-  a <- sapply(strsplit(as.character(imp$info), split="DP4="), "[", 2)
+  a <- sapply(strsplit(as.character(imp$info), split = "DP4="), "[", 2)
   b <- sapply(strsplit(a, split=";"), "[", 1)
-  c1 <- as.numeric(sapply(strsplit(b, split=","), "[",1))
-  c2 <- as.numeric(sapply(strsplit(b, split=","), "[",2))
-  c3 <- as.numeric(sapply(strsplit(b, split=","), "[",3))
-  c4 <- as.numeric(sapply(strsplit(b, split=","), "[",4))
+  c1 <- as.numeric(sapply(strsplit(b, split=","), "[", 1))
+  c2 <- as.numeric(sapply(strsplit(b, split=","), "[", 2))
+  c3 <- as.numeric(sapply(strsplit(b, split=","), "[", 3))
+  c4 <- as.numeric(sapply(strsplit(b, split=","), "[", 4))
   
   #combine
   ref <- c1 + c2
   alt <- c3 + c4
-  pos <- paste(imp[,1], imp[,2], sep="_")
-  out <- cbind(pos, imp[,-6],ref, alt)
+  pos <- paste(imp[, 1], imp[, 2], sep="_")
+  out <- cbind(pos, imp[, -6],ref, alt)
   out$pos <- as.character(out$pos)
   out$chrom <- factor(out$chrom)
   return(out)
@@ -32,13 +32,13 @@ import <- function(x){
 
 
 snp.info <- function(x, snp.m = snp.m){
-  origin <- snp.m$genot[match(x$pos, snp.m$pos, nomatch=NA)]
-  ref.origin <- snp.m$ref[match(x$pos, snp.m$pos, nomatch=NA)]
-  alt.origin <- snp.m$alt[match(x$pos, snp.m$pos, nomatch=NA)]
+  origin <- snp.m$genot[match(x$pos, snp.m$pos, nomatch = NA)]
+  ref.origin <- snp.m$ref[match(x$pos, snp.m$pos, nomatch = NA)]
+  alt.origin <- snp.m$alt[match(x$pos, snp.m$pos, nomatch = NA)]
   bind <- cbind(x,
-                origin=origin,
-                ref.origin=ref.origin,
-                alt.origin=alt.origin)
+                origin = origin,
+                ref.origin = ref.origin,
+                alt.origin = alt.origin)
   out <- bind[complete.cases(bind),]
   return(out)
 }
