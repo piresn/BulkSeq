@@ -1,4 +1,4 @@
-# Combine allele frequencies from two samples (3.cleanCounts.R)
+# Combine allele frequencies from two samples (can be obtained with cleanCounts.R script)
 # and calculate relative frequencies along chromosomes
 
 library(zoo)
