@@ -131,17 +131,18 @@ a <- ggplot(data = subdata)+
   geom_line(aes(pos, mean.setB, color = 'setB'))+
   scale_y_continuous(name = 'Cvi reads', labels = percent) +
   scale_colour_manual(name = 'sets', values = c(setA = "blue", setB = "red"))+
-  theme_bw()+
+  theme_minimal()+
   theme(legend.title = element_blank(),
         legend.position = 'top')
 
 # plot relative enrichment of Cvi in setB over setA
 b <- ggplot(data = subdata, aes(pos, mean.enrich))+
   facet_grid(. ~ Chr, scales = "free_x", space = "free_x")+
-  geom_hline(yintercept = 0, color = "grey")+
-  geom_area()+
+  geom_hline(yintercept = 0, color = "grey") +
+  geom_area(fill = 'gray70') +
+  geom_line() +
   scale_y_continuous(name = 'Cvi enrichment in setB', labels = percent) +
-  theme_bw()
+  theme_minimal()
 
 # create grid to place plots
 grid.newpage()
