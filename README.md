@@ -1,14 +1,22 @@
 # BulkSeq
 
+This set of scripts is described in a chapter entitled 'Identification of parent-of-origin-dependent QTLs using bulk-segregant sequencing (Bulk-Seq)' that will appear in the Springer Protocol Series 'Methods in Molecular Biology' on Plant Chromatin in 2017.
+
+Example fastq datasets that can be used in this analyis are available in the ArrayExpress database (www.ebi.ac.uk/arrayexpress) under accession number E-MTAB-5196:
+
+WT_pool_1 (1.56GB)
+mea_pool_1 (2GB)
+
+
 <b>GenomeSNPmask.py: </b> Remove or replace known SNP positions from a genome sequence file (fasta)
 
 <b>mapping.sh: </b> minimal set of commands to filter and map reads from a fastq file, call SNPs and output a <i>out.vcf</i> file with allele frequencies
 
-<b>1.snpFile.R:</b> retrieve publicly available snp data for the Cvi-0 and Ler-1 accessions of <i>Arabidopsis thaliana</i>, merge and output a reformatted snp matrix (<i>snpm.txt</i>)
+<b>snpFile.R:</b> retrieve publicly available snp data for the Cvi-0 and Ler-1 accessions of <i>Arabidopsis thaliana</i>, merge and output a reformatted snp matrix (<i>snpm.txt</i>)
 
-<b>2.cleanCounts.R:</b> merge information from the snp matrix (<i>snpm.txt</i>) with the measured allele frequencies (<i>out.vcf</i>), filters and outputs a <i>counts.csv</i> file with allele counts
+<b>cleanCounts.R:</b> merge information from the snp matrix (<i>snpm.txt</i>) with the measured allele frequencies (<i>out.vcf</i>), filters and outputs a <i>counts.csv</i> file with allele counts
 
-<b>3.pool.R:</b> combine allele frequencies from two samples (obtained with <i>cleanCounts.R</i>) and calculate relative frequencies along chromosomes
+<b>pool.R:</b> combine allele frequencies from two samples (obtained with <i>cleanCounts.R</i>) and calculate relative frequencies along chromosomes
 
 <i>Requires:</i>
 
