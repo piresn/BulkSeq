@@ -2,11 +2,6 @@
 
 This set of scripts is described in a chapter entitled 'Identification of parent-of-origin-dependent QTLs using bulk-segregant sequencing (Bulk-Seq)' that will appear in the Springer Protocol Series 'Methods in Molecular Biology' on Plant Chromatin in 2017.
 
-Example fastq datasets that can be used in this analyis are available in the ArrayExpress database (www.ebi.ac.uk/arrayexpress) under accession number E-MTAB-5196:
-
-WT_pool_1 (1.56GB)
-mea_pool_1 (2GB)
-
 
 <b>GenomeSNPmask.py: </b> Remove or replace known SNP positions from a genome sequence file (fasta)
 
@@ -30,3 +25,10 @@ ggplot2 2.1.0;
 zoo 1.7-13;
 Python 3.4.0;
 Bio 1.65;
+
+<HR>
+<i> Example fastq datasets that can be used in this analyis are available in the ArrayExpress database (www.ebi.ac.uk/arrayexpress) under accession number E-MTAB-5196:
+
+WT_pool_1 (1.56GB)
+
+mea_pool_1 (2GB)</i>
