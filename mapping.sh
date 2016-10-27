@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# to unzip fastq.gz compressed files, use gunzip *.fastq.gz
+
 # Check read quality with FastQC
 fastqc input.fastq
 
