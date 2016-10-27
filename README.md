@@ -27,7 +27,7 @@ Python 3.4.0;
 Bio 1.65;
 
 <HR>
-<i> Example fastq datasets that can be used in this analyis are available in the ArrayExpress database (www.ebi.ac.uk/arrayexpress) under accession number E-MTAB-5196:
+<i> Example fastq datasets that can be used in this analysis are available in the ArrayExpress database (www.ebi.ac.uk/arrayexpress) under accession number E-MTAB-5196:
 
 WT_pool_1 (1.56GB)
 
