@@ -3,12 +3,12 @@
 
 print("""
 
-    *** Usage ./mask.py (r/m) FASTA_file SNP_file ***
+    *** Usage ./mask.py (r/n) FASTA_file SNP_file ***
 
 mask.py returns a FASTA file with the SNPs indicated in SNP_file masked
 SNP_file should be csv with: chromosome, position, ref_base, new_base
 
-- m option: mask SNPs with Ns
+- n option: mask SNPs with Ns
 - r option: replace bases as in SNP_file
 
 """)
