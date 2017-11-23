@@ -1,7 +1,6 @@
 # BulkSeq
 
-This set of scripts is described in a chapter entitled 'Identification of parent-of-origin-dependent QTLs using bulk-segregant sequencing (Bulk-Seq)' that will appear in the Springer Protocol Series 'Methods in Molecular Biology' on Plant Chromatin in 2017.
-
+This set of scripts is part of the chapter ['Identification of parent-of-origin-dependent QTLs using bulk-segregant sequencing (Bulk-Seq)'](https://doi.org/10.1007/978-1-4939-7318-7_21), from the book Plant Chromatin Dynamics (Springer 2018)
 
 <b>GenomeSNPmask.py: </b> Remove or replace known SNP positions from a genome sequence file (fasta)
 
